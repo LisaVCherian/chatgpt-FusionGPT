@@ -49,7 +49,7 @@ const getApiConfig = () => {
     }
     apiUrl = `${apiBaseUrl}/openai/deployments/${deployment}/chat/completions?api-version=${apiVersion}`
     apiKey = process.env.AZURE_OPENAI_API_KEY || ''
-    model = '' // Azure Open AI always ignores the model and decides based on the deployment name passed through.
+    model = ''
   } else {
     let apiBaseUrl = process.env.OPENAI_API_BASE_URL || 'https://api.openai.com'
     if (apiBaseUrl && apiBaseUrl.endsWith('/')) {
@@ -124,7 +124,6 @@ const getOpenAIStream = async (
       const parser = createParser(onParse)
 
       for await (const chunk of res.body as any) {
-        // An extra newline is required to make AzureOpenAI work.
         const str = decoder.decode(chunk).replace('[DONE]\n', '[DONE]\n\n')
         parser.feed(str)
       }

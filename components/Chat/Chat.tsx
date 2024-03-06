@@ -23,7 +23,7 @@ import './index.scss'
 const HTML_REGULAR =
   /<(?!img|table|\/table|thead|\/thead|tbody|\/tbody|tr|\/tr|td|\/td|th|\/th|br|\/br).*?>/gi
 
-export interface ChatProps {}
+export interface ChatProps { }
 
 export interface ChatGPInstance {
   setConversation: (messages: ChatMessage[]) => void
@@ -114,7 +114,7 @@ const Chat = (props: ChatProps, ref: any) => {
                 done = true
               }
             }
-            // The delay of timeout can not be 0 as it will cause the message to not be rendered in racing condition
+
             setTimeout(() => {
               if (debug) {
                 console.log({ resultContent })

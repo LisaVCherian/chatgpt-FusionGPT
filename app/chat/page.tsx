@@ -14,10 +14,10 @@ const ChatProvider = () => {
         <ChatSideBar />
         <div className="flex-1 relative">
           <Chat ref={provider.chatRef} />
-          <PersonaPanel />
+          {/* <PersonaPanel /> */}
         </div>
       </Flex>
-      <PersonaModal />
+      {/* <PersonaModal /> */}
     </ChatContext.Provider>
   )
 }

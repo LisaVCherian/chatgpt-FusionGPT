@@ -25,10 +25,10 @@ export const Header = () => {
       <Flex align="center" gap="3">
         <NextLink href="/">
           <Heading as="h2" size="4" style={{ maxWidth: 200 }}>
-            ChatGPT Lite
+            FusionGPT
           </Heading>
         </NextLink>
-        <Flex align="center" gap="3" className="ml-auto">
+        {/* <Flex align="center" gap="3" className="ml-auto">
           <Avatar
             color="gray"
             size="2"
@@ -53,7 +53,7 @@ export const Header = () => {
               </Select.Item>
             </Select.Content>
           </Select.Root>
-        </Flex>
+        </Flex> */}
         <Tooltip content="Navigation">
           <IconButton
             size="3"
